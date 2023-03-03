@@ -1,5 +1,5 @@
 # Recommended directory form
--FD  
-  -density  
-  -fishnet  
-  -*.r  
+- FD  
+ - density  
+ - fishnet  
+ - *.r  
