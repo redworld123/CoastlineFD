@@ -1,6 +1,8 @@
 # Recommended directory form
 
-- FD  
+- FD
   - density
+    - *.shp
   - fishnet
+    - *.shp
   - *.r
