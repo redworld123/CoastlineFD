@@ -1,0 +1,14 @@
+export("FDC")
+
+import("sf")
+import("sp")
+import("tidyr")
+import("rgdal")
+import("readxl")
+import("fields")
+import("writexl")
+import("ggplot2")
+import("progress")
+import("tidyverse")
+
+importFrom("stats", "cor", "lm")
