@@ -9,6 +9,6 @@
 
 # !!!Pay attention
 
-You must densify line shapefiles by QGIS tools at first, Recommended interval parameters 1.000000
+You must densify line shapefiles by QGIS tools at first, recommended interval parameters 1.000000
 
 ![Densify by interval](./images/1.png)
