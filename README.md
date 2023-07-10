@@ -15,8 +15,8 @@ You must densify line shapefiles by QGIS tools at first, recommended interval pa
 
 # Common research scales in China, unit meter
 
-- 30
-- 60
+- 30 [A high performance computer is required, and calculating this parameter will take a lot of time.]
+- 60 [A high performance computer is required, and calculating this parameter will take a lot of time.]
 - 75
 - 150
 - 300
