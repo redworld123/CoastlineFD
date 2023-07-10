@@ -72,7 +72,7 @@ Dividers_Functoin = function (path, r, pearsonValue) {
   if (abs(pearson) >= pearsonValue) {
     show_info = lm(lglr ~ lgr, data = my_data_content)
   } else {
-    print("Dividers_Functoin: The Pearson coefficient of your input data is less than 0.95")
+    print("Dividers_Functoin: The Pearson coefficient of your input data is less than you defined!")
     return("break")
   }
 
@@ -114,7 +114,7 @@ Boxes_Function = function (path, netPath, n, pearsonValue) {
   if (abs(pearson) >= pearsonValue) {
     show_info = lm(lgnr ~ lgn, data = my_data_content)
   } else {
-    print("Boxes_Functoin: The Pearson coefficient of your input data is less than 0.95")
+    print("Boxes_Functoin: The Pearson coefficient of your input data is less than you defined!")
     return("break")
   }
 
