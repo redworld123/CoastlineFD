@@ -13,7 +13,7 @@ You must densify line shapefiles by QGIS tools at first, recommended interval pa
 
 ![Densify by interval](./images/1.png)
 
-# Common research scales in China,unit meter
+# Common research scales in China, unit meter
 
 - 30
 - 60
