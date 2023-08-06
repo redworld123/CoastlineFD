@@ -1,7 +1,7 @@
 # Recommended directory form
 
 - density1
--   *.shp
+  - *.shp
 - density2
   - *.shp
 - fishnet
