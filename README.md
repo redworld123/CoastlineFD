@@ -1,11 +1,12 @@
 # Recommended directory form
 
-- FD
-  - density
-    - *.shp
-  - fishnet
-    - *.shp
-  - *.r
+- density1
+-   *.shp
+- density2
+  - *.shp
+- fishnet
+  - *.shp
+- *.r
 
 # !!!Pay attention
 
@@ -15,8 +16,8 @@ You must densify line shapefiles by QGIS tools at first, recommended interval pa
 
 # Common research scales in China, unit meter
 
-- 30 [A high performance computer is required, and calculating this parameter will take a lot of time.]
-- 60 [A high performance computer is required, and calculating this parameter will take a lot of time.]
+- 30
+- 60
 - 75
 - 150
 - 300
@@ -36,4 +37,3 @@ You must densify line shapefiles by QGIS tools at first, recommended interval pa
 - 6000
 - 7500
 - 9000
-
