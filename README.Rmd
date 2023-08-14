@@ -2,14 +2,18 @@
 output: github_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 ```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
+FD(
+  "../density/D",
+  "../density/B",
+  "../fishnet",
+  "FD1985_2022.xlsx",
+  c(1985:1988),
+  c(30, 60, 75, 150, 300, 600,
+    900, 1000, 1050, 1100, 1150,
+    1200, 1500, 1800),
+  0.00,
+  TRUE
 )
 ```
 
