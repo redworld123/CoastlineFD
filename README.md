@@ -45,8 +45,8 @@ FD(
 
 ## Pay attention
 
-In directory named BoxesFD, You had better not use line with density.
-In directory named DividersFD, You must densify line shapefiles by QGIS tools at first, recommended interval parameters 1.000000.
+In directory named BoxesFD, You had better not use line with density.  
+In directory named DividersFD, You must densify line shapefiles by QGIS tools at first, recommended interval parameters 1.000000.  
 ![Densify by interval](./images/1.png)
 
 # Common research scales in China, unit meter
