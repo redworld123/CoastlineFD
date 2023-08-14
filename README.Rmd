@@ -2,57 +2,34 @@
 output: github_document
 ---
 
-```{r, include = FALSE}
-FD(
-  "../density/D",
-  "../density/B",
-  "../fishnet",
-  "FD1985_2022.xlsx",
-  c(1985:1988),
-  c(30, 60, 75, 150, 300, 600,
-    900, 1000, 1050, 1100, 1150,
-    1200, 1500, 1800),
-  0.00,
-  TRUE
-)
-```
-
 # CoastlineFD
 
-<!-- badges: start -->
-<!-- badges: end -->
-
-The goal of CoastlineFD is to ...
+The goal of CoastlineFD is to calculate the fractal dimension of coastline by boxes method and Dividers method.
 
 ## Installation
 
 You can install the development version of CoastlineFD like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+devtools::github_install("redworld123/CoastlineFD")
 ```
 
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+``` r
 library(CoastlineFD)
-## basic example code
+FD(
+  "../density/D",
+  "../density/B",
+  "../fishnet",
+  "FD1985_2022.xlsx",
+  c(1985:2022),
+  c(30, 60, 75, 150, 300, 600, 900, 1000, 1050, 1100, 1150, 1200, 1500, 1800),
+  0.95,
+  TRUE
+)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so
