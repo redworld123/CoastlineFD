@@ -21,10 +21,10 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(CoastlineFD)
 FD(
-  "../density/D",
-  "../density/B",
-  "../fishnet",
-  "FD1985_2022.xlsx",
+  "../BoxesFD",
+  "../DividersFD",
+  "../Fishnet",
+  "../CoastlineFD.xlsx",
   c(1985:2022),
   c(30, 60, 75, 150, 300, 600, 900, 1000, 1050, 1100, 1150, 1200, 1500, 1800),
   0.95,
@@ -38,9 +38,9 @@ FD(
   - *.shp
 - DividersFD
   - *.shp
-- fishnet
+- Fishnet
   - *.shp
-- code
+- Code
   - *.r
 
 ## Pay attention
