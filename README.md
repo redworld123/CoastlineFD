@@ -1,7 +1,3 @@
----
-output: github_document
----
-
 # CoastlineFD
 
 The goal of CoastlineFD is to calculate the fractal dimension of coastline by boxes method and Dividers method.
