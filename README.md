@@ -15,15 +15,16 @@ devtools::github_install("redworld123/CoastlineFD")
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-library(CoastlineFD)
+library("CoastlineFD")
+
 FD(
-  "../BoxesFD",
-  "../DividersFD",
-  "../Fishnet",
-  "../CoastlineFD.xlsx",
+  "./DividersFD",
+  "./BoxesFD",
+  "./Fishnet",
+  "./FD.xlsx",
   c(1985:2022),
-  c(30, 60, 75, 150, 300, 600, 900, 1000, 1050, 1100, 1150, 1200, 1500, 1800),
-  0.95,
+  c(30, 60, 75, 150, 300, 600, 900, 1000, 1050, 1100, 1150, 1200, 1500, 1800, 2500, 3000, 3500, 4500, 6000, 7500, 9000),
+  0.90,
   TRUE
 )
 ```
