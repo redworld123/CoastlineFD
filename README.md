@@ -41,7 +41,7 @@ FD(
 
 ## Pay attention
 
-In directory named BoxesFD, you had better not use line with density. In directory named DividersFD, you must densify line shapefiles by QGIS tools at first, recommended interval parameters 1.000000. In addition, the appropriate amount of files should be topologically checked to ensure that there are no suspension points, self-intersecting points, breakpoints, etc
+In directory named BoxesFD, you had better not use line with density. In directory named DividersFD, you must densify line shapefiles by QGIS tools at first, recommended interval parameters 1.000000. In addition, the appropriate amount of files should be topologically checked to sure that there are no suspension points, self-intersecting points, breakpoints, etc
 
 ![Densify by interval](./images/1.png)
 
