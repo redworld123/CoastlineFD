@@ -37,8 +37,7 @@ FD(
   - *.shp
 - Fishnet
   - *.shp
-- Code
-  - *.r
+- *.r
 
 ## Pay attention
 
