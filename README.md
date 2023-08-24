@@ -7,7 +7,7 @@ The goal of CoastlineFD is to calculate the fractal dimension of coastline by bo
 You can install the development version of CoastlineFD like so:
 
 ``` r
-install.package("CoastlineFD")
+install.packages("CoastlineFD")
 devtools::github_install("redworld123/CoastlineFD")
 ```
 
