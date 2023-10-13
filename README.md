@@ -13,15 +13,14 @@ devtools::install_github("CoastlineFD")
 - BoxesFD
 - DividersFD
 - Fishnet
-- Results
 - *.R
 
 ```R
 library("CoastlineFD")
 
 FD(
-  "./DividersFD",
-  "./BoxesFD",
+  "./Dividers",
+  "./Boxes",
   "./Fishnet",
   "./FD.xlsx",
   c(1985:2022),
@@ -34,3 +33,8 @@ FD(
   TRUE
 )
 ```
+
+# Detial
+
+- When calculating the fractal dimension of dividers method, you need to density the shoreline data first.
+
