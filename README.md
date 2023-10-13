@@ -1,6 +1,6 @@
-# CoastlineFD
+# Description
 
-Fractal Dimensions of Coastline
+A system is used to calculate the fractal dimension of coastline by boxes method and Dividers method.
 
 # Installation
 
