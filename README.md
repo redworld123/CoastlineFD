@@ -13,6 +13,8 @@ devtools::install_github("CoastlineFD")
 - BoxesFD
 - DividersFD
 - Fishnet
+- Results
+- *.R
 
 ```R
 library("CoastlineFD")
@@ -32,4 +34,3 @@ FD(
   TRUE
 )
 ```
-
