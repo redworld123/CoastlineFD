@@ -38,5 +38,5 @@ FD(
 
 - When calculating the fractal dimension of dividers method, you need to density the shoreline data first.
 - You can use the QGIS toolkit to perform this operation in batches.
-[!image]("./image/1.png")
+[image](./image/1.png)
 
