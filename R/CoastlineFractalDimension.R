@@ -1,3 +1,21 @@
+#'
+#' @export FD
+#' @export BoxesFD
+#' @export DividersFD
+#'
+#' @import sf
+#' @import tidyr
+#' @import utils
+#' @import readxl
+#' @import fields
+#' @import writexl
+#' @import ggplot2
+#' @import progress
+#' @import sfheaders
+#'
+#' @importFrom stats cor lm
+#'
+
 # Preprocessing
 globalVariables(c("Year", "type"))
 
@@ -118,38 +136,26 @@ Boxes_Function = function (path, netPath, n, pearsonValue) {
 }
 
 #'
-#' @title CoastlineFD
+#' @title FD
 #'
-#' @description Calculate the Coastline Fractal Dimension
+#' @description Calculating the Coastline Fractal Dimension with both methods
 #'
 #' @usage FD(DinputPath, BinputPath, netPath, outputPath, year, r, pearsonValue, writeF, showF)
 #'
 #' @param DinputPath    All density shoreline files path
 #' @param BinputPath    All origin shoreline files path
 #' @param netPath       All fishnet files path
-#' @param outputPath    FD results will be exported here
+#' @param outputPath    All results will be exported here
 #' @param year          R vector object, which represent your study time
 #' @param r             R vector object, which represent your study scale
 #' @param pearsonValue  The Pearson coefficient of your input data
 #' @param writeF        Exporting Function's result
 #' @param showF         Drawing Function's result
 #'
-#' @returns An .xlsx file containing the results of the fractal dimension calculation, and a fractal dimension graph
-#'
-#' @export
-#' @import sf
-#' @import tidyr
-#' @import utils
-#' @import readxl
-#' @import fields
-#' @import writexl
-#' @import ggplot2
-#' @import progress
-#' @import sfheaders
-#'
-#' @importFrom stats cor lm
+#' @returns An .xlsx file containing the results of the coastline fractal dimension
 #'
 #' @examples
+#'
 #' DinputPath = list.files(system.file('extdata', package = 'CoastlineFD'),full.names = TRUE)[2]
 #' BinputPath = list.files(system.file('extdata', package = 'CoastlineFD'),full.names = TRUE)[1]
 #' netPath = list.files(system.file('extdata', package = 'CoastlineFD'),full.names = TRUE)[3]
@@ -167,8 +173,6 @@ Boxes_Function = function (path, netPath, n, pearsonValue) {
 #'   TRUE
 #' )
 #'
-
-# Calculating final results
 FD = function (DinputPath, BinputPath, netPath, outputPath, year, r, pearsonValue, writeF, showF) {
 
   my_data_D = list.files(path = DinputPath,
@@ -212,6 +216,151 @@ FD = function (DinputPath, BinputPath, netPath, outputPath, year, r, pearsonValu
 
   if (showF) {
     tmp = FractalDimension %>% pivot_longer(cols = 2:3, names_to = "type", values_to = "FD")
+    tmp %>% ggplot(aes(Year, FD, col = type, group = type)) +
+      geom_line(color = "black") +
+      geom_point(size = 2) +
+      ylab("FractalDimension")
+  }
+}
+
+#'
+#' @title BoxesFD
+#'
+#' @description Calculating the Coastline Fractal Dimension with Boxes methods
+#'
+#' @usage BoxesFD(BinputPath, netPath, outputPath, year, r, pearsonValue, writeF, showF)
+#'
+#' @param BinputPath    All origin shoreline files path
+#' @param netPath       All fishnet files path
+#' @param outputPath    All results will be exported here
+#' @param year          R vector object, which represent your study time
+#' @param r             R vector object, which represent your study scale
+#' @param pearsonValue  The Pearson coefficient of your input data
+#' @param writeF        Exporting Function's result
+#' @param showF         Drawing Function's result
+#'
+#' @returns An .xlsx file containing the results of the coastline fractal dimension
+#'
+#' @examples
+#'
+#' BinputPath = list.files(system.file('extdata', package = 'CoastlineFD'),full.names = TRUE)[1]
+#' netPath = list.files(system.file('extdata', package = 'CoastlineFD'),full.names = TRUE)[3]
+#' outputPath = paste0(system.file('extdata', package = 'CoastlineFD'), "/FD1985_1986.xlsx")
+#'
+#' BoxesFD(
+#'   BinputPath,
+#'   netPath,
+#'   outputPath,
+#'   c(1985:1986),
+#'   c(300, 600, 900, 1000, 1050, 1100),
+#'   0.00,
+#'   FALSE,
+#'   TRUE
+#' )
+#'
+BoxesFD = function (BinputPath, netPath, outputPath, year, r, pearsonValue, writeF, showF) {
+
+  my_data_B = list.files(path = BinputPath,
+                         pattern = "*.shp$",
+                         all.files = FALSE,
+                         full.names = TRUE)
+
+  BoxesResults = vector()
+  N = length(year)
+  pb = progress_bar$new(total = N)
+  for (i in c(1:N)) {
+
+    # Calculating Boxes_FD from timeline
+    BoxesResult = Boxes_Function(my_data_B[i], netPath, r, pearsonValue)
+    BoxesResults = append(BoxesResults, BoxesResult)
+
+    # print progress bar
+    pb$tick()
+    Sys.sleep(0.05)
+  }
+
+  FractalDimension = data.frame(
+    "Year" = year,
+    "BoxesFD" = BoxesResults
+  )
+
+  if (writeF) {
+    write_xlsx(FractalDimension, outputPath)
+  }
+
+  if (showF) {
+    tmp = FractalDimension %>% pivot_longer(cols = 2, names_to = "type", values_to = "FD")
+    tmp %>% ggplot(aes(Year, FD, col = type, group = type)) +
+      geom_line(color = "black") +
+      geom_point(size = 2) +
+      ylab("FractalDimension")
+  }
+}
+
+#'
+#' @title DividersFD
+#'
+#' @description Calculating the Coastline Fractal Dimension with Dividers methods
+#'
+#' @usage DividersFD(DinputPath, outputPath, year, r, pearsonValue, writeF, showF)
+#'
+#' @param DinputPath    All density shoreline files path
+#' @param outputPath    All results will be exported here
+#' @param year          R vector object, which represent your study time
+#' @param r             R vector object, which represent your study scale
+#' @param pearsonValue  The Pearson coefficient of your input data
+#' @param writeF        Exporting Function's result
+#' @param showF         Drawing Function's result
+#'
+#' @returns An .xlsx file containing the results of the coastline fractal dimension
+#'
+#' @examples
+#'
+#' DinputPath = list.files(system.file('extdata', package = 'CoastlineFD'),full.names = TRUE)[2]
+#' outputPath = paste0(system.file('extdata', package = 'CoastlineFD'), "/FD1985_1986.xlsx")
+#'
+#' DividersFD(
+#'   DinputPath,
+#'   outputPath,
+#'   c(1985:1986),
+#'   c(300, 600, 900, 1000, 1050, 1100),
+#'   0.00,
+#'   FALSE,
+#'   TRUE
+#' )
+#'
+DividersFD = function (DinputPath, outputPath, year, r, pearsonValue, writeF, showF) {
+
+  my_data_D = list.files(path = DinputPath,
+                         pattern = "*.shp$",
+                         all.files = FALSE,
+                         full.names = TRUE)
+
+  DividersResults = vector()
+  N = length(year)
+  pb = progress_bar$new(total = N)
+  for (i in c(1:N)) {
+
+    # Calculating Dividers_FD from timeline
+    DividersResult = Dividers_Functoin(my_data_D[i], r, pearsonValue)
+    DividersResults = append(DividersResults, DividersResult)
+
+    # print progress bar
+    pb$tick()
+    Sys.sleep(0.05)
+  }
+
+  FractalDimension = data.frame(
+    "Year" = year,
+    "DividersFD" = DividersResults
+  )
+
+  if (writeF) {
+    write_xlsx(FractalDimension, outputPath)
+  }
+
+  if (showF) {
+    tmp = FractalDimension %>% pivot_longer(cols = 2, names_to = "type", values_to = "FD")
     tmp %>% ggplot(aes(Year, FD, col = type, group = type)) +
       geom_line(color = "black") +
       geom_point(size = 2) +

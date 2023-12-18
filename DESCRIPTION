@@ -1,12 +1,12 @@
 Package: CoastlineFD
 Title: Calculate the Coastline Fractal Dimension
-Version: 1.0.0
+Version: 1.1.0
 Authors@R: person("Zhao Shiqi", role = c("aut", "cre"), email = "zhao0101010101@gmail.com")
 Author: Zhao Shiqi [aut, cre]
 Maintainer: Zhao Shiqi <zhao0101010101@gmail.com>
 URL: https://github.com/redworld123/CoastlineFD
 BugReports: https://github.com/redworld123/CoastlineFD/issues
-Description: A system is used to calculate the fractal dimension of coastline by boxes method and Dividers method.
+Description: A mothed is used to calculate the fractal dimension of coastline by boxes method and Dividers method.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
