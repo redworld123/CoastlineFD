@@ -367,3 +367,4 @@ DividersFD = function (DinputPath, outputPath, year, r, pearsonValue, writeF, sh
       ylab("FractalDimension")
   }
 }
+
