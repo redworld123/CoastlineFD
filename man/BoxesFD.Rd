@@ -7,7 +7,7 @@
 BoxesFD(BinputPath, netPath, outputPath, year, r, pearsonValue, writeF, showF)
 }
 \arguments{
-\item{BinputPath}{All origin shoreline files path}
+\item{BinputPath}{All origin coastline files path}
 
 \item{netPath}{All fishnet files path}
 
@@ -27,7 +27,7 @@ BoxesFD(BinputPath, netPath, outputPath, year, r, pearsonValue, writeF, showF)
 An .xlsx file containing the results of the coastline fractal dimension
 }
 \description{
-Calculating the Coastline Fractal Dimension with Boxes methods
+Calculation of the fractal dimension of a coastline using the boxes methods
 }
 \examples{
 

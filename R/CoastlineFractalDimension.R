@@ -138,12 +138,12 @@ Boxes_Function = function (path, netPath, n, pearsonValue) {
 #'
 #' @title FD
 #'
-#' @description Calculating the Coastline Fractal Dimension with both methods
+#' @description Calculation of the fractal dimension of a coastline using both methods
 #'
 #' @usage FD(DinputPath, BinputPath, netPath, outputPath, year, r, pearsonValue, writeF, showF)
 #'
-#' @param DinputPath    All density shoreline files path
-#' @param BinputPath    All origin shoreline files path
+#' @param DinputPath    All density coastline files path
+#' @param BinputPath    All origin coastline files path
 #' @param netPath       All fishnet files path
 #' @param outputPath    All results will be exported here
 #' @param year          R vector object, which represent your study time
@@ -226,11 +226,11 @@ FD = function (DinputPath, BinputPath, netPath, outputPath, year, r, pearsonValu
 #'
 #' @title BoxesFD
 #'
-#' @description Calculating the Coastline Fractal Dimension with Boxes methods
+#' @description Calculation of the fractal dimension of a coastline using the boxes methods
 #'
 #' @usage BoxesFD(BinputPath, netPath, outputPath, year, r, pearsonValue, writeF, showF)
 #'
-#' @param BinputPath    All origin shoreline files path
+#' @param BinputPath    All origin coastline files path
 #' @param netPath       All fishnet files path
 #' @param outputPath    All results will be exported here
 #' @param year          R vector object, which represent your study time
@@ -300,11 +300,11 @@ BoxesFD = function (BinputPath, netPath, outputPath, year, r, pearsonValue, writ
 #'
 #' @title DividersFD
 #'
-#' @description Calculating the Coastline Fractal Dimension with Dividers methods
+#' @description Calculation of the fractal dimension of a coastline using the dividers methods
 #'
 #' @usage DividersFD(DinputPath, outputPath, year, r, pearsonValue, writeF, showF)
 #'
-#' @param DinputPath    All density shoreline files path
+#' @param DinputPath    All density coastline files path
 #' @param outputPath    All results will be exported here
 #' @param year          R vector object, which represent your study time
 #' @param r             R vector object, which represent your study scale
@@ -367,4 +367,3 @@ DividersFD = function (DinputPath, outputPath, year, r, pearsonValue, writeF, sh
       ylab("FractalDimension")
   }
 }
-

@@ -7,9 +7,9 @@
 FD(DinputPath, BinputPath, netPath, outputPath, year, r, pearsonValue, writeF, showF)
 }
 \arguments{
-\item{DinputPath}{All density shoreline files path}
+\item{DinputPath}{All density coastline files path}
 
-\item{BinputPath}{All origin shoreline files path}
+\item{BinputPath}{All origin coastline files path}
 
 \item{netPath}{All fishnet files path}
 
@@ -29,7 +29,7 @@ FD(DinputPath, BinputPath, netPath, outputPath, year, r, pearsonValue, writeF, s
 An .xlsx file containing the results of the coastline fractal dimension
 }
 \description{
-Calculating the Coastline Fractal Dimension with both methods
+Calculation of the fractal dimension of a coastline using both methods
 }
 \examples{
 

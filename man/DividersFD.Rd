@@ -7,7 +7,7 @@
 DividersFD(DinputPath, outputPath, year, r, pearsonValue, writeF, showF)
 }
 \arguments{
-\item{DinputPath}{All density shoreline files path}
+\item{DinputPath}{All density coastline files path}
 
 \item{outputPath}{All results will be exported here}
 
@@ -25,7 +25,7 @@ DividersFD(DinputPath, outputPath, year, r, pearsonValue, writeF, showF)
 An .xlsx file containing the results of the coastline fractal dimension
 }
 \description{
-Calculating the Coastline Fractal Dimension with Dividers methods
+Calculation of the fractal dimension of a coastline using the dividers methods
 }
 \examples{
 
