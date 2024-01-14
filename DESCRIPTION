@@ -1,6 +1,6 @@
 Package: CoastlineFD
 Title: Calculation of the fractal dimension of a coastline
-Version: 1.1.1
+Version: 1.1.2
 Authors@R: person("Zhao Shiqi", role = c("aut", "cre"), email = "zhao0101010101@gmail.com")
 Author: Zhao Shiqi [aut, cre]
 Maintainer: Zhao Shiqi <zhao0101010101@gmail.com>
