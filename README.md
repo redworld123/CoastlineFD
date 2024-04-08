@@ -8,7 +8,7 @@
 </a>
 
 <div align="center">
-<img width="125" height="125" src="./img/CoastlineFD.png" alt="legado"/>
+    <img width="125" height="125" src="./img/CoastlineFD.png" alt="legado"/>
 <br>
 CoastlineFD
 <br>
@@ -39,10 +39,6 @@ library('devtools')
 install_github("redworld123/CoastlineFD")
 ```
 
-<a href="#readme">
-    <img src="https://img.shields.io/badge/-返回顶部-orange.svg" alt="#" align="right">
-</a>
-
 # Function-主要功能 [![](https://img.shields.io/badge/-Function-F5F5F5.svg)](#Function-主要功能-)
 
 - 网格法计算分形维数
@@ -50,10 +46,6 @@ install_github("redworld123/CoastlineFD")
 - 网格法和量规法共同计算分形维数
 - 绘制计算结果时序图
 - 导出计算结果为`.xlsx`
-
-<a href="#readme">
-    <img src="https://img.shields.io/badge/-返回顶部-orange.svg" alt="#" align="right">
-</a>
 
 # Example-操作范例 [![](https://img.shields.io/badge/-Example-F565F5.svg)](#Example-操作范例-)
 
@@ -169,21 +161,13 @@ FD(
     <img src="./img/Rplot.png"/>
 </div>
 
-<a href="#readme">
-    <img src="https://img.shields.io/badge/-返回顶部-orange.svg" alt="#" align="right">
-</a>
-
 # Interface-运行界面 [![](https://img.shields.io/badge/-Interface-F5F5F5.svg)](#Interface-运行界面-)
 
-> 耐心等待进度条  
+> 耐心等待进度条结束即可  
 
 <div align="center">
     <img src="./img/res.png"/>
 </div>
-
-<a href="#readme">
-    <img src="https://img.shields.io/badge/-返回顶部-orange.svg" alt="#" align="right">
-</a>
 
 # Other-其他 [![](https://img.shields.io/badge/-Other-A5F5F5.svg)](#Other-其他-)
 
@@ -194,7 +178,3 @@ FD(
 - 海岸线分形维数计算方法及其比较研究
 - 山东省围填海演进过程及其对自然岸线资源的影响
 - 基于自动化量规法的中国大陆海岸线分形特征研究
-
-<a href="#readme">
-    <img src="https://img.shields.io/badge/-返回顶部-orange.svg" alt="#" align="right">
-</a>
