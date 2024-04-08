@@ -2,7 +2,7 @@
 
 <a href="https://www.r-project.org/" target="_blank">
     <img width="24" height="24"  src="./img/Rlogo.png"/>
-</a>&nbsp;
+</a>
 <a href="https://posit.co/download/rstudio-desktop/" target="_blank">
     <img width="24" height="24"  src="./img/RStudio.png"/>
 </a>
