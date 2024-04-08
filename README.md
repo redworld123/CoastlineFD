@@ -1,4 +1,4 @@
-# [中文](README.md) [English](English.md)
+# [CoastlineFD 1.1.2](README.md)
 
 <a href="https://www.r-project.org/" target="_blank">
     <img width="24" height="24"  src="./img/Rlogo.png"/>
@@ -10,7 +10,7 @@
 <div align="center">
 <img width="125" height="125" src="./img/CoastlineFD.png" alt="legado"/>
 <br>
-CoastlineFD / 海岸线分形维数计算
+CoastlineFD
 <br>
 <a href="https://mirrors.tuna.tsinghua.edu.cn/CRAN/web/packages/CoastlineFD/index.html" target="_blank">CRAN</a> / <a href="https://github.com/redworld123/CoastlineFD" target="_blank">GitHub</a>
 <br>
@@ -22,15 +22,13 @@ CoastlineFD / 海岸线分形维数计算
 [![](https://img.shields.io/badge/-Function-F5F5F5.svg)](#Function-主要功能-)
 [![](https://img.shields.io/badge/-Example-F565F5.svg)](#Example-操作范例-)
 [![](https://img.shields.io/badge/-Interface-F5F5F5.svg)](#Interface-运行界面-)
-[![](https://img.shields.io/badge/-Other-F5F5F5.svg)](#Other-其他-)
-[![](https://img.shields.io/badge/-Grateful-F5F5F5.svg)](#Grateful-感谢-)
+[![](https://img.shields.io/badge/-Other-A5F5F5.svg)](#Other-其他-)
 
 > 新用户？  
 >
 > 建议频繁使用`help(package=‘CoastlineFD’)`  
 
 # Download-下载方法 [![](https://img.shields.io/badge/-Downlaod-F5F5G5.svg)](#Downlaod-下载方法-)
-[English](English.md)
 
 ```
 # CRAN
@@ -46,7 +44,6 @@ install_github("redworld123/CoastlineFD")
 </a>
 
 # Function-主要功能 [![](https://img.shields.io/badge/-Function-F5F5F5.svg)](#Function-主要功能-)
-[English](English.md)
 
 - 网格法计算分形维数
 - 量规法计算分形维数
@@ -59,7 +56,6 @@ install_github("redworld123/CoastlineFD")
 </a>
 
 # Example-操作范例 [![](https://img.shields.io/badge/-Example-F565F5.svg)](#Example-操作范例-)
-[English](English.md)
 
 ### 量规法
 
@@ -106,7 +102,8 @@ DividersFD(
 > 使用`BoxesFD()`函数单独计算网格法分形维数  
 
 ```
-DinputPath = './BoxesFD'                        # 其中放置多期岸线矢量文件
+BinputPath = './BoxesFD'                        # 其中放置多期岸线矢量文件
+Fishnet = './Fishnet'                           # 其中放置多个尺度的网格
 outputPath = './FD.xlsx'                        # 结果导出的位置
 year = c(1985:2023)                             # 多期岸线的起止年份
 r = c(                                          # 量规的尺度
@@ -122,6 +119,7 @@ showF = TRUE                                    # 是否绘制结果图
 
 BoxesFD(
     BinputPath,
+    Fishnet,
     outputPath,
     year,
     r,
@@ -136,7 +134,9 @@ BoxesFD(
 > 注意上述所有提示，使用`FD()`函数同时计算两者  
 
 ```
-DinputPath = './BoxesFD'                        # 其中放置多期岸线矢量文件
+DinputPath = './DividersFD'                     # 其中放置已实密化多期岸线矢量文件
+BinputPath = './BoxesFD'                        # 其中放置未实密化多期岸线矢量文件
+Fishnet = './Fishnet'                           # 其中放置多个尺度的网格
 outputPath = './FD.xlsx'                        # 结果导出的位置
 year = c(1985:2023)                             # 多期岸线的起止年份
 r = c(                                          # 量规的尺度
@@ -150,8 +150,10 @@ pearsonValue = 0.98                             # 皮尔森系数
 writeF = TRUE                                   # 是否将结果导出到.xlsx文件
 showF = TRUE                                    # 是否绘制结果图
 
-BoxesFD(
+FD(
+    DinputPath,
     BinputPath,
+    Fishnet,
     outputPath,
     year,
     r,
@@ -161,7 +163,38 @@ BoxesFD(
 )
 ```
 
+> 运行结果图  
+
+<div align="center">
+    <img src="./img/Rplot.png"/>
+</div>
+
 <a href="#readme">
     <img src="https://img.shields.io/badge/-返回顶部-orange.svg" alt="#" align="right">
 </a>
 
+# Interface-运行界面 [![](https://img.shields.io/badge/-Interface-F5F5F5.svg)](#Interface-运行界面-)
+
+> 耐心等待进度条  
+
+<div align="center">
+    <img src="./img/res.png"/>
+</div>
+
+<a href="#readme">
+    <img src="https://img.shields.io/badge/-返回顶部-orange.svg" alt="#" align="right">
+</a>
+
+# Other-其他 [![](https://img.shields.io/badge/-Other-A5F5F5.svg)](#Other-其他-)
+
+> 参考文献  
+
+- How Long Is the Coast of Britain? Statistical Self-Similarity and Fractional Dimension
+- Fractal dimension of coastline of Australia
+- 海岸线分形维数计算方法及其比较研究
+- 山东省围填海演进过程及其对自然岸线资源的影响
+- 基于自动化量规法的中国大陆海岸线分形特征研究
+
+<a href="#readme">
+    <img src="https://img.shields.io/badge/-返回顶部-orange.svg" alt="#" align="right">
+</a>
