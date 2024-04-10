@@ -1,10 +1,13 @@
-# [CoastlineFD 1.1.2](README.md)
+# [中文](README.md) [English](English.md)
 
 <a href="https://www.r-project.org/" target="_blank">
     <img width="24" height="24"  src="./img/Rlogo.png"/>
 </a>
 <a href="https://posit.co/download/rstudio-desktop/" target="_blank">
     <img width="24" height="24"  src="./img/RStudio.png"/>
+</a>
+<a href="https://qgis.org/en/site/" target="_blank">
+    <img width="24" height="24"  src="./img/QGIS.png"/>
 </a>
 
 <div align="center">
@@ -98,7 +101,7 @@ BinputPath = './BoxesFD'                        # 其中放置多期岸线矢量
 Fishnet = './Fishnet'                           # 其中放置多个尺度的网格
 outputPath = './FD.xlsx'                        # 结果导出的位置
 year = c(1985:2023)                             # 多期岸线的起止年份
-r = c(                                          # 量规的尺度
+r = c(                                          # 网格的尺度
     30, 60, 75, 90, 150, 200, 300, 400,
     500, 600, 700, 800, 900, 1000, 1050,
     1100, 1150, 1200, 1300, 1400, 1500,
@@ -131,7 +134,7 @@ BinputPath = './BoxesFD'                        # 其中放置未实密化多期
 Fishnet = './Fishnet'                           # 其中放置多个尺度的网格
 outputPath = './FD.xlsx'                        # 结果导出的位置
 year = c(1985:2023)                             # 多期岸线的起止年份
-r = c(                                          # 量规的尺度
+r = c(                                          # 量规和网格的尺度
     30, 60, 75, 90, 150, 200, 300, 400,
     500, 600, 700, 800, 900, 1000, 1050,
     1100, 1150, 1200, 1300, 1400, 1500,
@@ -173,8 +176,6 @@ FD(
 
 > 参考文献  
 
-- How Long Is the Coast of Britain? Statistical Self-Similarity and Fractional Dimension
-- Fractal dimension of coastline of Australia
 - 海岸线分形维数计算方法及其比较研究
 - 山东省围填海演进过程及其对自然岸线资源的影响
 - 基于自动化量规法的中国大陆海岸线分形特征研究
